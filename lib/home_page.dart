@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constants/screen_size.dart';
+import 'package:flutter_app/screens/camera_screen.dart';
 import 'package:flutter_app/screens/feed_screen.dart';
 import 'package:flutter_app/screens/profile_screen.dart';
 
@@ -42,21 +43,29 @@ class _HomePageState extends State<HomePage> {
         index: _selectedIndex,
         children: _screens,
       ),
-        bottomNavigationBar: Container(child: BottomNavigationBar(
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            items: btmNavItems,
-            unselectedItemColor: Colors.grey,
-            selectedItemColor: Colors.black87,
-            currentIndex: _selectedIndex,
-            onTap: _onBtnItemClick,
-        )),
+      bottomNavigationBar: Container(child: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: btmNavItems,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black87,
+        currentIndex: _selectedIndex,
+        onTap: _onBtnItemClick,
+      )),
     );
   }
 
   void _onBtnItemClick(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    switch(index) {
+      case 2 :
+        _openCamera();
+        break;
+      default : setState(() {_selectedIndex = index; });
+    }
+  }
+
+  void _openCamera() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => CameraScreen()));
   }
 }

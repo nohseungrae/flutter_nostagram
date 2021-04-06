@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/auth_screen.dart';
 
 class ProfileSideMenu extends StatelessWidget {
 
@@ -25,6 +26,10 @@ class ProfileSideMenu extends StatelessWidget {
                   color: Colors.black87,
               ),
               title: Text('Sign Out'),
+              onTap: () {
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => AuthScreen()));
+              },
             )
           ],
         ),
