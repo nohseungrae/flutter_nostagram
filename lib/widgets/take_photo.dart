@@ -17,18 +17,17 @@ class _TakePhotoState extends State<TakePhoto> {
   CameraController _controller;
   Widget _progress = MyProgressIndicator();
 
-  // @override
-  // void dispose() {
-  //   _controller.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<CameraDescription>>(
       future: availableCameras(),
       builder: (context, snapshot) {
-        print(snapshot.data);
         return Column(
           children: [
             Container(
@@ -63,12 +62,17 @@ class _TakePhotoState extends State<TakePhoto> {
       future: _controller.initialize(),
       builder: (context, snapshot) {
         if(snapshot.connectionState == ConnectionState.done){
-          return OverflowBox(
-            alignment: Alignment.center,
-            child: Container(
-                width: size.width,
-                height: size.width / _controller.value.aspectRatio,
-                child: CameraPreview(_controller)),
+          return ClipRect(
+            child: OverflowBox(
+              alignment: Alignment.center,
+              child: FittedBox(
+                fit: BoxFit.fitWidth,
+                child: Container(
+                    width: size.width,
+                    height: size.width / _controller.value.aspectRatio,
+                    child: CameraPreview(_controller)),
+              ),
+            ),
           );
         } else {
           return _progress;
