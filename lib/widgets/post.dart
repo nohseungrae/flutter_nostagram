@@ -4,6 +4,7 @@ import 'package:flutter_app/constants/common_size.dart';
 import 'package:flutter_app/constants/screen_size.dart';
 import 'package:flutter_app/widgets/my_progress_indicator.dart';
 import 'package:flutter_app/widgets/rounded_avatar.dart';
+import 'package:provider/provider.dart';
 
 import 'comment.dart';
 
@@ -105,9 +106,14 @@ class Post extends StatelessWidget {
   Widget _postHeader() {
     return Row(
       children: [
-        Padding(
-            padding: const EdgeInsets.all(common_xxs_gap),
-            child: RoundedAvatar()
+        Consumer(
+          builder: (context, data, child) {
+
+          },
+          child: Padding(
+              padding: const EdgeInsets.all(common_xxs_gap),
+              child: RoundedAvatar()
+          ),
         ),
         Expanded(child: Text('username')),
         IconButton(
