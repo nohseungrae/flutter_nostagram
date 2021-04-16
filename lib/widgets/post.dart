@@ -106,15 +106,10 @@ class Post extends StatelessWidget {
   Widget _postHeader() {
     return Row(
       children: [
-        Consumer(
-          builder: (context, data, child) {
-
-          },
-          child: Padding(
+          Padding(
               padding: const EdgeInsets.all(common_xxs_gap),
               child: RoundedAvatar()
           ),
-        ),
         Expanded(child: Text('username')),
         IconButton(
             icon: Icon(
