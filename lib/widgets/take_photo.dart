@@ -4,7 +4,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constants/screen_size.dart';
 import 'package:flutter_app/models/camera_state.dart';
-import 'package:flutter_app/screens/share_photo.dart';
+import 'package:flutter_app/screens/share_post_screen.dart';
 import 'package:flutter_app/widgets/my_progress_indicator.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
