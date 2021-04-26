@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1002079485116",
+    "project_id": "nostaclone-v2",
+    "storage_bucket": "nostaclone-v2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002079485116:android:10caa8cb6eb858090c24b9",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1002079485116-r9ni9ir8n5tqmip534locen0v6brn52c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBo25cfNGyUULGKehuZtwpgJxjZQNpQdA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1002079485116-r9ni9ir8n5tqmip534locen0v6brn52c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
